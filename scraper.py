@@ -141,7 +141,7 @@ def parse_articles(soup, portal_name, zone, item_type, seen_urls):
                 link = f"https://www.idealista.com{href}" if href.startswith("/") else href
                 if link in seen_urls: continue
                 price_el = art.select_one(".item-price")
-                price = clean_text(price_el.text) if price_el else "No especificado"
+                price = clean_text(price_el.text) if price_el else "Precio oculto"
                 details_el = art.select(".item-detail")
                 details = ", ".join([clean_text(d.text) for d in details_el]) if details_el else ""
                 img_url = extract_image(art)
@@ -168,7 +168,7 @@ def parse_articles(soup, portal_name, zone, item_type, seen_urls):
                 title = clean_text(title_el.text) if title_el else clean_text(link_el.text)
                 if not title: title = f"Inmueble en {zone}"
                 price_el = art.select_one('[class*="price"], [class*="Price"]')
-                price = clean_text(price_el.text) if price_el else "No especificado"
+                price = clean_text(price_el.text) if price_el else "Precio oculto"
                 details_el = art.select('[class*="features"], [class*="Features"], [class*="detail"]')
                 details = ", ".join([clean_text(d.text) for d in details_el]) if details_el else ""
                 img_url = extract_image(art)
@@ -188,7 +188,7 @@ def parse_articles(soup, portal_name, zone, item_type, seen_urls):
                 if link in seen_urls: continue
                 title = clean_text(link_el.text)
                 price_el = art.select_one(".ad-preview__price, .price, [class*='price']")
-                price = clean_text(price_el.text) if price_el else "No especificado"
+                price = clean_text(price_el.text) if price_el else "Precio oculto"
                 details_el = art.select(".ad-preview__characteristics, .characteristics, [class*='charac']")
                 details = ", ".join([clean_text(d.text) for d in details_el]) if details_el else ""
                 img_url = extract_image(art)
@@ -208,7 +208,7 @@ def parse_articles(soup, portal_name, zone, item_type, seen_urls):
                 if link in seen_urls: continue
                 title = clean_text(link_el.text)
                 price_el = art.select_one(".price, span.font-2, [class*='price']")
-                price = clean_text(price_el.text) if price_el else "No especificado"
+                price = clean_text(price_el.text) if price_el else "Precio oculto"
                 details_el = art.select(".list-item-feature, p.list-item-description")
                 details = ", ".join([clean_text(d.text) for d in details_el]) if details_el else ""
                 img_url = extract_image(art)
@@ -229,7 +229,7 @@ def parse_articles(soup, portal_name, zone, item_type, seen_urls):
                 title_el = art.select_one("h2, h3, [class*='title']")
                 title = clean_text(title_el.text) if title_el else clean_text(link_el.text)
                 price_el = art.select_one("[class*='price']")
-                price = clean_text(price_el.text) if price_el else "No especificado"
+                price = clean_text(price_el.text) if price_el else "Precio oculto"
                 img_url = extract_image(art)
                 if check_compatibility(f"{title} {price} {art.text}", item_type):
                     if not any(r["enlace"] == link for r in results):

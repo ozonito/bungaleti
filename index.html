@@ -497,14 +497,13 @@
     }
 
     function parsePrice(priceStr) {
-      if (!priceStr || priceStr.toLowerCase().includes("consultar") || priceStr.toLowerCase().includes("especificado")) return 0;
+      if (!priceStr || priceStr.toLowerCase().includes("consultar") || priceStr.toLowerCase().includes("oculto") || priceStr.toLowerCase().includes("especificado")) return 0;
       const num = priceStr.replace(/[^0-9]/g, '');
       return num ? parseInt(num, 10) : 0;
     }
 
     function calcMortgage(price) {
       if (!price || price <= 0) return "N/A";
-      // Hipoteca a 30 años al 3.2% con 20% de entrada
       const loan = price * 0.8;
       const r = 0.032 / 12;
       const n = 360;
@@ -566,20 +565,25 @@
         return matchesType && matchesSearch && matchesFav;
       });
 
-      // Ordenación
-      if (sortVal === 'price-asc') {
-        filtered.sort((a, b) => parsePrice(a.precio) - parsePrice(b.precio));
-      } else if (sortVal === 'price-desc') {
-        filtered.sort((a, b) => parsePrice(b.precio) - parsePrice(a.precio));
-      } else if (sortVal === 'deal-score') {
-        filtered.sort((a, b) => {
-          const pa = parsePrice(a.precio);
-          const pb = parsePrice(b.precio);
-          if (pa === 0) return 1;
-          if (pb === 0) return -1;
+      // ORDENACIÓN: Inmuebles con precio visible siempre arriba, "Precio oculto" al final del todo
+      filtered.sort((a, b) => {
+        const pa = parsePrice(a.precio);
+        const pb = parsePrice(b.precio);
+
+        // Mover los inmuebles sin precio numérico (pa === 0) al final
+        if (pa === 0 && pb !== 0) return 1;
+        if (pb === 0 && pa !== 0) return -1;
+        if (pa === 0 && pb === 0) return 0;
+
+        if (sortVal === 'price-asc') {
           return pa - pb;
-        });
-      }
+        } else if (sortVal === 'price-desc') {
+          return pb - pa;
+        } else if (sortVal === 'deal-score') {
+          return pa - pb;
+        }
+        return 0;
+      });
 
       if (filtered.length === 0) {
         container.innerHTML = `
@@ -593,6 +597,7 @@
 
       container.innerHTML = filtered.map((item, idx) => {
         const priceNum = parsePrice(item.precio);
+        const isHiddenPrice = !priceNum || item.precio.toLowerCase().includes("oculto") || item.precio.toLowerCase().includes("consultar") || item.precio.toLowerCase().includes("especificado");
         const isDeal = item.tipo === 'vivienda' && priceNum > 0 && priceNum <= 250000;
         const imgUrl = getFallbackImage(item, idx);
         const isFav = favorites.includes(item.enlace);
@@ -621,9 +626,11 @@
 
               <div class="card-price-row">
                 <div>
-                  <div class="price-main">${item.precio}</div>
+                  ${isHiddenPrice 
+                    ? `<span style="font-size:1.1rem; font-weight:700; color:#94a3b8; background:rgba(148,163,184,0.12); border:1px solid rgba(148,163,184,0.25); padding:0.3rem 0.75rem; border-radius:8px; display:inline-block;">🔒 Precio oculto</span>` 
+                    : `<div class="price-main">${item.precio}</div>`}
                 </div>
-                ${priceNum > 0 ? `
+                ${!isHiddenPrice && priceNum > 0 ? `
                   <div class="price-mortgage">
                     Est. Hipoteca<br><span>~${mortgage}</span>
                   </div>
@@ -640,6 +647,7 @@
         `;
       }).join('');
     }
+
 
     // Event listeners
     document.getElementById('searchInput').addEventListener('input', render);
