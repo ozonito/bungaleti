@@ -119,6 +119,14 @@ def check_compatibility(card_text, item_type="vivienda"):
     return True
 
 
+def extract_image(art):
+    img_el = art.select_one("img")
+    if img_el:
+        src = img_el.get("src") or img_el.get("data-src") or img_el.get("data-ondemand-img") or img_el.get("data-original")
+        if src and not src.startswith("data:") and ("http" in src or src.startswith("//")):
+            return f"https:{src}" if src.startswith("//") else src
+    return ""
+
 def parse_articles(soup, portal_name, zone, item_type, seen_urls):
     results = []
     
@@ -136,8 +144,9 @@ def parse_articles(soup, portal_name, zone, item_type, seen_urls):
                 price = clean_text(price_el.text) if price_el else "No especificado"
                 details_el = art.select(".item-detail")
                 details = ", ".join([clean_text(d.text) for d in details_el]) if details_el else ""
+                img_url = extract_image(art)
                 if check_compatibility(f"{title} {price} {details} {art.text}", item_type):
-                    results.append({"portal": portal_name, "zona": zone, "tipo": item_type, "titulo": title, "precio": price, "detalles": details, "enlace": link})
+                    results.append({"portal": portal_name, "zona": zone, "tipo": item_type, "titulo": title, "precio": price, "detalles": details, "enlace": link, "imagen": img_url})
             except Exception: pass
 
     elif portal_name == "Fotocasa":
@@ -162,9 +171,10 @@ def parse_articles(soup, portal_name, zone, item_type, seen_urls):
                 price = clean_text(price_el.text) if price_el else "No especificado"
                 details_el = art.select('[class*="features"], [class*="Features"], [class*="detail"]')
                 details = ", ".join([clean_text(d.text) for d in details_el]) if details_el else ""
+                img_url = extract_image(art)
                 if check_compatibility(f"{title} {price} {details} {art.text}", item_type):
                     if not any(r["enlace"] == link for r in results):
-                        results.append({"portal": portal_name, "zona": zone, "tipo": item_type, "titulo": title, "precio": price, "detalles": details, "enlace": link})
+                        results.append({"portal": portal_name, "zona": zone, "tipo": item_type, "titulo": title, "precio": price, "detalles": details, "enlace": link, "imagen": img_url})
             except Exception: pass
 
     elif portal_name == "Pisos.com":
@@ -181,9 +191,10 @@ def parse_articles(soup, portal_name, zone, item_type, seen_urls):
                 price = clean_text(price_el.text) if price_el else "No especificado"
                 details_el = art.select(".ad-preview__characteristics, .characteristics, [class*='charac']")
                 details = ", ".join([clean_text(d.text) for d in details_el]) if details_el else ""
+                img_url = extract_image(art)
                 if check_compatibility(f"{title} {price} {details} {art.text}", item_type):
                     if not any(r["enlace"] == link for r in results):
-                        results.append({"portal": portal_name, "zona": zone, "tipo": item_type, "titulo": title, "precio": price, "detalles": details, "enlace": link})
+                        results.append({"portal": portal_name, "zona": zone, "tipo": item_type, "titulo": title, "precio": price, "detalles": details, "enlace": link, "imagen": img_url})
             except Exception: pass
 
     elif portal_name == "Habitaclia":
@@ -200,9 +211,10 @@ def parse_articles(soup, portal_name, zone, item_type, seen_urls):
                 price = clean_text(price_el.text) if price_el else "No especificado"
                 details_el = art.select(".list-item-feature, p.list-item-description")
                 details = ", ".join([clean_text(d.text) for d in details_el]) if details_el else ""
+                img_url = extract_image(art)
                 if check_compatibility(f"{title} {price} {details} {art.text}", item_type):
                     if not any(r["enlace"] == link for r in results):
-                        results.append({"portal": portal_name, "zona": zone, "tipo": item_type, "titulo": title, "precio": price, "detalles": details, "enlace": link})
+                        results.append({"portal": portal_name, "zona": zone, "tipo": item_type, "titulo": title, "precio": price, "detalles": details, "enlace": link, "imagen": img_url})
             except Exception: pass
 
     elif portal_name == "YaEncontre":
@@ -218,12 +230,14 @@ def parse_articles(soup, portal_name, zone, item_type, seen_urls):
                 title = clean_text(title_el.text) if title_el else clean_text(link_el.text)
                 price_el = art.select_one("[class*='price']")
                 price = clean_text(price_el.text) if price_el else "No especificado"
+                img_url = extract_image(art)
                 if check_compatibility(f"{title} {price} {art.text}", item_type):
                     if not any(r["enlace"] == link for r in results):
-                        results.append({"portal": portal_name, "zona": zone, "tipo": item_type, "titulo": title, "precio": price, "detalles": "", "enlace": link})
+                        results.append({"portal": portal_name, "zona": zone, "tipo": item_type, "titulo": title, "precio": price, "detalles": "", "enlace": link, "imagen": img_url})
             except Exception: pass
 
     return results
+
 
 def scrape_multi_portal(p, targets, seen_urls):
     print("=== INICIANDO BÚSQUEDA MULTI-PORTAL (FOTOCASA, PISOS.COM, HABITACLIA, YAENCONTRE, IDEALISTA) ===")

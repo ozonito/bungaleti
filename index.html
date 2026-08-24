@@ -3,27 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oportunidades Inmobiliarias - Sonnenland & San Agustín</title>
+  <title>Bungaleti - Panel de Decisiones Inmobiliarias (Gran Canaria)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #0f172a;
-      --card-bg: #1e293b;
-      --card-hover: #334155;
+      --bg-color: #0b0f19;
+      --card-bg: #151c2c;
+      --card-hover: #1e293b;
       --accent: #3b82f6;
-      --accent-hover: #2563eb;
+      --accent-glow: rgba(59, 130, 246, 0.3);
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --purple: #8b5cf6;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --border-color: #334155;
-      --green: #10b981;
-      --amber: #f59e0b;
+      --border-color: #243044;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-main);
       min-height: 100vh;
@@ -31,18 +32,19 @@
       flex-direction: column;
     }
 
+    /* HEADER */
     header {
-      background: rgba(30, 41, 59, 0.85);
-      backdrop-filter: blur(12px);
+      background: rgba(21, 28, 44, 0.85);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-color);
       position: sticky;
       top: 0;
       z-index: 50;
-      padding: 1rem 2rem;
+      padding: 1.2rem 2rem;
     }
 
-    .header-content {
-      max-width: 1280px;
+    .header-container {
+      max-width: 1380px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -51,46 +53,79 @@
       gap: 1rem;
     }
 
-    .logo-area h1 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+    .logo-box h1 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #60a5fa, #3b82f6, #a78bfa);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
     }
 
-    .subtitle {
-      font-size: 0.85rem;
+    .logo-subtitle {
+      font-size: 0.82rem;
       color: var(--text-muted);
       margin-top: 0.2rem;
+      font-weight: 400;
     }
 
-    .badge-count {
-      background: #1e1b4b;
-      color: #818cf8;
-      border: 1px solid #3730a3;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.8rem;
-      font-weight: 600;
+    /* KPI DASHBOARD CARDS */
+    .kpi-section {
+      max-width: 1380px;
+      margin: 1.8rem auto 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      width: 100%;
     }
 
+    .kpi-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .kpi-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .kpi-blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .kpi-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .kpi-amber { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .kpi-purple { background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.3); }
+
+    .kpi-val { font-size: 1.4rem; font-weight: 700; color: #fff; }
+    .kpi-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+
+    /* MAIN CONTENT */
     main {
-      max-width: 1280px;
+      max-width: 1380px;
       margin: 2rem auto;
       padding: 0 1.5rem;
       flex: 1;
       width: 100%;
     }
 
-    .filter-bar {
+    /* CONTROLS BAR */
+    .controls-bar {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
+      border-radius: 16px;
       padding: 1.25rem;
-      border-radius: 12px;
       margin-bottom: 2rem;
       display: flex;
       flex-wrap: wrap;
@@ -107,225 +142,415 @@
     }
 
     .search-input, .select-input {
-      background: #0f172a;
+      background: #0b0f19;
       border: 1px solid var(--border-color);
       color: var(--text-main);
-      padding: 0.6rem 1rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
+      padding: 0.65rem 1rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-family: inherit;
       outline: none;
       transition: all 0.2s;
     }
 
     .search-input:focus, .select-input:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
     }
 
-    .btn-filter {
-      background: #0f172a;
+    .btn-tab {
+      background: #0b0f19;
       border: 1px solid var(--border-color);
       color: var(--text-muted);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
+      padding: 0.55rem 1.1rem;
+      border-radius: 10px;
       font-size: 0.85rem;
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
     }
 
-    .btn-filter.active, .btn-filter:hover {
+    .btn-tab.active, .btn-tab:hover {
       background: var(--accent);
       color: #fff;
       border-color: var(--accent);
+      box-shadow: 0 4px 12px var(--accent-glow);
     }
 
+    /* GRID CONTAINER */
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+      gap: 1.6rem;
     }
 
-    .card {
+    /* PROPERTY CARD */
+    .property-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1.25rem;
+      border-radius: 16px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s, box-shadow 0.25s;
       position: relative;
+    }
+
+    .property-card:hover {
+      transform: translateY(-6px);
+      border-color: #3b82f6;
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-thumb-wrap {
+      position: relative;
+      width: 100%;
+      height: 190px;
+      background: #090d16;
       overflow: hidden;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: #475569;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    .card-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
     }
 
-    .card-tags {
+    .property-card:hover .card-thumb {
+      transform: scale(1.06);
+    }
+
+    .thumb-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%, rgba(15,23,42,0.9) 100%);
+    }
+
+    .badge-top-left {
+      position: absolute;
+      top: 12px;
+      left: 12px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.75rem;
+      gap: 0.4rem;
+      z-index: 2;
     }
 
-    .portal-tag {
-      font-size: 0.7rem;
+    .badge-deal {
+      background: rgba(16, 185, 129, 0.9);
+      color: #fff;
+      font-size: 0.72rem;
       font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      backdrop-filter: blur(4px);
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      padding: 0.2rem 0.6rem;
-      border-radius: 6px;
-      background: rgba(59, 130, 246, 0.15);
-      color: #60a5fa;
-      border: 1px solid rgba(59, 130, 246, 0.3);
     }
 
-    .type-tag {
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.2rem 0.6rem;
+    .badge-portal {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      color: #60a5fa;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
       border-radius: 6px;
+      backdrop-filter: blur(4px);
+      z-index: 2;
     }
-    .type-vivienda { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
-    .type-garaje { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+
+    .btn-fav {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-color);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      z-index: 2;
+    }
+
+    .btn-fav.active {
+      background: #ef4444;
+      border-color: #ef4444;
+    }
+
+    .card-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
 
     .card-title {
-      font-size: 1.05rem;
-      font-weight: 600;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #f8fafc;
       line-height: 1.4;
-      margin-bottom: 0.75rem;
-      color: #f1f5f9;
-
+      margin-bottom: 0.6rem;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
-    .card-price {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--green);
-      margin-bottom: 0.5rem;
-    }
-
-    .card-details {
-      font-size: 0.85rem;
+    .card-location {
+      font-size: 0.82rem;
       color: var(--text-muted);
-      margin-bottom: 1.25rem;
-      line-height: 1.5;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
     }
 
-    .card-footer {
+    .card-price-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-top: auto;
-      padding-top: 0.75rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
+      align-items: flex-end;
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .btn-link {
-      display: inline-flex;
+    .price-main {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--emerald);
+    }
+
+    .price-mortgage {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      text-align: right;
+    }
+    .price-mortgage span { font-weight: 700; color: #cbd5e1; }
+
+    .card-action {
+      margin-top: auto;
+    }
+
+    .btn-visit {
+      display: flex;
       align-items: center;
-      gap: 0.4rem;
+      justify-content: center;
+      gap: 0.5rem;
       background: var(--accent);
       color: #fff;
       text-decoration: none;
-      padding: 0.55rem 1.1rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: background 0.2s;
-      width: 100%;
-      justify-content: center;
+      padding: 0.65rem;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: all 0.2s;
     }
 
-    .btn-link:hover {
-      background: var(--accent-hover);
+    .btn-visit:hover {
+      background: #2563eb;
+      box-shadow: 0 4px 14px var(--accent-glow);
     }
 
-    .empty-state {
-      text-align: center;
-      padding: 4rem 2rem;
-      color: var(--text-muted);
-      grid-column: 1 / -1;
+    /* DECISION MODAL / FLOATING COMPARISON BAR */
+    .compare-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1e293b;
+      border: 1px solid #3b82f6;
+      padding: 0.8rem 1.5rem;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      z-index: 100;
     }
 
     footer {
       border-top: 1px solid var(--border-color);
-      padding: 1.5rem 2rem;
+      padding: 2rem;
       text-align: center;
       font-size: 0.85rem;
       color: var(--text-muted);
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
+
+  <!-- HEADER -->
   <header>
-    <div class="header-content">
-      <div class="logo-area">
-        <h1>🏠 Inmuebles & Garajes Sur de Gran Canaria</h1>
-        <div class="subtitle">Búsqueda automática semanal • Sonnenland, Maspalomas y San Agustín</div>
+    <div class="header-container">
+      <div class="logo-box">
+        <h1>📊 Bungaleti Decision Suite</h1>
+        <div class="logo-subtitle">Panel de Análisis y Oportunidades Inmobiliarias • Gran Canaria</div>
       </div>
       <div>
-        <span class="badge-count" id="totalCount">Cargando...</span>
+        <button class="btn-tab active" id="favFilterBtn">❤️ Favoritos (<span id="favCount">0</span>)</button>
       </div>
     </div>
   </header>
 
+  <!-- KPI ANALYTICS DASHBOARD -->
+  <section class="kpi-section">
+    <div class="kpi-card">
+      <div class="kpi-icon kpi-blue">🏡</div>
+      <div>
+        <div class="kpi-val" id="kpiTotal">-</div>
+        <div class="kpi-label">Viviendas Disponibles</div>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-icon kpi-green">💎</div>
+      <div>
+        <div class="kpi-val" id="kpiDeals">-</div>
+        <div class="kpi-label">Chollos (≤ 250k €)</div>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-icon kpi-purple">📈</div>
+      <div>
+        <div class="kpi-val" id="kpiAvgPrice">- €</div>
+        <div class="kpi-label">Precio Medio Viviendas</div>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-icon kpi-amber">🚗</div>
+      <div>
+        <div class="kpi-val" id="kpiGarages">-</div>
+        <div class="kpi-label">Garajes en San Agustín</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN SEARCH & DECISION DASHBOARD -->
   <main>
-    <div class="filter-bar">
+    <div class="controls-bar">
       <div class="filter-group">
-        <input type="text" id="searchInput" class="search-input" placeholder="Buscar por palabra clave..." style="min-width: 240px;">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar por zona, calle o palabra clave..." style="min-width: 280px;">
         <select id="sortSelect" class="select-input">
-          <option value="recent">Más recientes</option>
-          <option value="price-asc">Precio: Menor a Mayor</option>
-          <option value="price-desc">Precio: Mayor a Menor</option>
+          <option value="recent">⏱️ Más recientes primero</option>
+          <option value="price-asc">💵 Precio: Menor a Mayor</option>
+          <option value="price-desc">💰 Precio: Mayor a Menor</option>
+          <option value="deal-score">⭐ Mejores Oportunidades</option>
         </select>
       </div>
 
       <div class="filter-group">
-        <button class="btn-filter active" data-type="all">Todos</button>
-        <button class="btn-filter" data-type="vivienda">🏡 Viviendas (≤300k€)</button>
-        <button class="btn-filter" data-type="garaje">🚗 Garajes (San Agustín)</button>
+        <button class="btn-tab active" data-type="all">Todos</button>
+        <button class="btn-tab" data-type="vivienda">🏡 Viviendas (≤300k €)</button>
+        <button class="btn-tab" data-type="garaje">🚗 Garajes (San Agustín)</button>
       </div>
     </div>
 
+    <!-- CARDS GRID -->
     <div class="grid-container" id="gridContainer">
-      <!-- Tarjetas cargadas dinámicamente -->
+      <!-- Tarjetas renderizadas con JavaScript -->
     </div>
   </main>
 
   <footer>
-    <p>Actualizado automáticamente mediante Antigravity y GitHub Pages.</p>
+    <p>Bungaleti © 2026 • Análisis en tiempo real con Inteligencia Artificial y Scraping Multi-Portal.</p>
   </footer>
 
   <script>
-    let allProperties = [];
-    let currentFilterType = 'all';
+    let allData = [];
+    let favorites = JSON.parse(localStorage.getItem('bungaleti_favs') || '[]');
+    let currentTypeFilter = 'all';
+    let onlyFavs = false;
 
-    async function loadData() {
-      try {
-        const response = await fetch('data.json?t=' + Date.now());
-        if (!response.ok) throw new Error('No se pudo cargar data.json');
-        allProperties = await response.json();
-      } catch (err) {
-        console.warn('Cargando data.json:', err);
-        allProperties = [];
-      }
-      render();
+    // Imágenes por defecto según zona/tipo si no hay fotografía del anuncio
+    const DEFAULT_IMAGES = {
+      vivienda: [
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80"
+      ],
+      garaje: [
+        "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=600&q=80"
+      ]
+    };
+
+    function getFallbackImage(item, idx) {
+      if (item.imagen && item.imagen.startsWith("http")) return item.imagen;
+      const list = item.tipo === 'garaje' ? DEFAULT_IMAGES.garaje : DEFAULT_IMAGES.vivienda;
+      return list[idx % list.length];
     }
 
-    function parsePriceNumber(priceStr) {
+    function parsePrice(priceStr) {
       if (!priceStr || priceStr.toLowerCase().includes("consultar") || priceStr.toLowerCase().includes("especificado")) return 0;
       const num = priceStr.replace(/[^0-9]/g, '');
       return num ? parseInt(num, 10) : 0;
+    }
+
+    function calcMortgage(price) {
+      if (!price || price <= 0) return "N/A";
+      // Hipoteca a 30 años al 3.2% con 20% de entrada
+      const loan = price * 0.8;
+      const r = 0.032 / 12;
+      const n = 360;
+      const m = (loan * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      return Math.round(m) + " €/mes";
+    }
+
+    async function fetchData() {
+      try {
+        const res = await fetch('data.json?t=' + Date.now());
+        allData = await res.json();
+      } catch (e) {
+        console.warn('Error cargando data.json:', e);
+        allData = [];
+      }
+      updateKPIs();
+      render();
+    }
+
+    function updateKPIs() {
+      const viviendas = allData.filter(d => d.tipo === 'vivienda');
+      const garajes = allData.filter(d => d.tipo === 'garaje');
+      const deals = viviendas.filter(v => {
+        const p = parsePrice(v.precio);
+        return p > 0 && p <= 250000;
+      });
+
+      const prices = viviendas.map(v => parsePrice(v.precio)).filter(p => p > 0);
+      const avgPrice = prices.length ? Math.round(prices.reduce((a, b) => a + b, 0) / prices.length) : 0;
+
+      document.getElementById('kpiTotal').innerText = viviendas.length;
+      document.getElementById('kpiDeals').innerText = deals.length;
+      document.getElementById('kpiAvgPrice').innerText = avgPrice ? avgPrice.toLocaleString('es-ES') + " €" : "N/A";
+      document.getElementById('kpiGarages').innerText = garajes.length;
+      document.getElementById('favCount').innerText = favorites.length;
+    }
+
+    function toggleFav(link) {
+      if (favorites.includes(link)) {
+        favorites = favorites.filter(f => f !== link);
+      } else {
+        favorites.push(link);
+      }
+      localStorage.setItem('bungaleti_favs', JSON.stringify(favorites));
+      updateKPIs();
+      render();
     }
 
     function render() {
@@ -333,67 +558,111 @@
       const searchVal = document.getElementById('searchInput').value.toLowerCase();
       const sortVal = document.getElementById('sortSelect').value;
 
-      let filtered = allProperties.filter(item => {
-        const matchesType = (currentFilterType === 'all') || (item.tipo === currentFilterType);
-        const textToSearch = `${item.titulo} ${item.zona} ${item.portal} ${item.precio} ${item.detalles || ''}`.toLowerCase();
-        const matchesSearch = textToSearch.includes(searchVal);
-        return matchesType && matchesSearch;
+      let filtered = allData.filter((item, idx) => {
+        const matchesType = (currentTypeFilter === 'all') || (item.tipo === currentTypeFilter);
+        const text = `${item.titulo} ${item.zona} ${item.portal} ${item.precio} ${item.detalles || ''}`.toLowerCase();
+        const matchesSearch = text.includes(searchVal);
+        const matchesFav = onlyFavs ? favorites.includes(item.enlace) : true;
+        return matchesType && matchesSearch && matchesFav;
       });
 
+      // Ordenación
       if (sortVal === 'price-asc') {
-        filtered.sort((a, b) => parsePriceNumber(a.precio) - parsePriceNumber(b.precio));
+        filtered.sort((a, b) => parsePrice(a.precio) - parsePrice(b.precio));
       } else if (sortVal === 'price-desc') {
-        filtered.sort((a, b) => parsePriceNumber(b.precio) - parsePriceNumber(a.precio));
+        filtered.sort((a, b) => parsePrice(b.precio) - parsePrice(a.precio));
+      } else if (sortVal === 'deal-score') {
+        filtered.sort((a, b) => {
+          const pa = parsePrice(a.precio);
+          const pb = parsePrice(b.precio);
+          if (pa === 0) return 1;
+          if (pb === 0) return -1;
+          return pa - pb;
+        });
       }
-
-      document.getElementById('totalCount').innerText = `${filtered.length} Inmuebles Disponibles`;
 
       if (filtered.length === 0) {
         container.innerHTML = `
-          <div class="empty-state">
-            <h3>No se encontraron inmuebles con estos filtros</h3>
-            <p style="margin-top:0.5rem;">Intenta cambiar las palabras de búsqueda o seleccionar otra categoría.</p>
+          <div style="grid-column:1/-1; text-align:center; padding:5rem 2rem; color:var(--text-muted);">
+            <h2>Sin resultados coincidentes</h2>
+            <p style="margin-top:0.5rem;">Prueba con otros criterios de búsqueda o limpia los filtros.</p>
           </div>
         `;
         return;
       }
 
-      container.innerHTML = filtered.map(item => `
-        <div class="card">
-          <div>
-            <div class="card-tags">
-              <span class="portal-tag">${item.portal}</span>
-              <span class="type-tag ${item.tipo === 'garaje' ? 'type-garaje' : 'type-vivienda'}">
-                ${item.tipo === 'garaje' ? '🚗 Garaje' : '🏡 Vivienda'}
-              </span>
+      container.innerHTML = filtered.map((item, idx) => {
+        const priceNum = parsePrice(item.precio);
+        const isDeal = item.tipo === 'vivienda' && priceNum > 0 && priceNum <= 250000;
+        const imgUrl = getFallbackImage(item, idx);
+        const isFav = favorites.includes(item.enlace);
+        const mortgage = calcMortgage(priceNum);
+
+        return `
+          <div class="property-card">
+            <div class="card-thumb-wrap">
+              <img src="${imgUrl}" class="card-thumb" alt="${item.titulo}" loading="lazy" onerror="this.src='${DEFAULT_IMAGES.vivienda[0]}'">
+              <div class="thumb-overlay"></div>
+              
+              <div class="badge-top-left">
+                ${isDeal ? '<span class="badge-deal">🔥 Gran Oportunidad</span>' : ''}
+              </div>
+
+              <span class="badge-portal">${item.portal}</span>
+
+              <button class="btn-fav ${isFav ? 'active' : ''}" onclick="toggleFav('${item.enlace}')" title="Guardar en favoritos">
+                ${isFav ? '❤️' : '🤍'}
+              </button>
             </div>
-            <div class="card-title">${item.titulo}</div>
-            <div class="card-price">${item.precio}</div>
-            <div class="card-details">${item.zona} ${item.detalles ? '• ' + item.detalles : ''}</div>
+
+            <div class="card-content">
+              <div class="card-location">📍 ${item.zona}</div>
+              <div class="card-title">${item.titulo}</div>
+
+              <div class="card-price-row">
+                <div>
+                  <div class="price-main">${item.precio}</div>
+                </div>
+                ${priceNum > 0 ? `
+                  <div class="price-mortgage">
+                    Est. Hipoteca<br><span>~${mortgage}</span>
+                  </div>
+                ` : ''}
+              </div>
+
+              <div class="card-action">
+                <a href="${item.enlace}" target="_blank" rel="noopener" class="btn-visit">
+                  Ver Oferta Completa en ${item.portal} ↗
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="card-footer">
-            <a href="${item.enlace}" target="_blank" rel="noopener" class="btn-link">
-              Ver Inmueble en ${item.portal} ↗
-            </a>
-          </div>
-        </div>
-      `).join('');
+        `;
+      }).join('');
     }
 
-    // Listeners
+    // Event listeners
     document.getElementById('searchInput').addEventListener('input', render);
     document.getElementById('sortSelect').addEventListener('change', render);
 
-    document.querySelectorAll('.btn-filter').forEach(btn => {
+    document.querySelectorAll('.btn-tab[data-type]').forEach(btn => {
       btn.addEventListener('click', (e) => {
-        document.querySelectorAll('.btn-filter').forEach(b => b.classList.remove('active'));
-        e.target.classList.add('active');
-        currentFilterType = e.target.getAttribute('data-type');
+        document.querySelectorAll('.btn-tab[data-type]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentTypeFilter = btn.getAttribute('data-type');
+        onlyFavs = false;
+        document.getElementById('favFilterBtn').classList.remove('active');
         render();
       });
     });
 
-    loadData();
+    document.getElementById('favFilterBtn').addEventListener('click', (e) => {
+      onlyFavs = !onlyFavs;
+      e.target.classList.toggle('active', onlyFavs);
+      render();
+    });
+
+    fetchData();
   </script>
 </body>
 </html>
