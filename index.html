@@ -476,26 +476,6 @@
     let currentTypeFilter = 'all';
     let onlyFavs = false;
 
-    // Imágenes por defecto según zona/tipo si no hay fotografía del anuncio
-    const DEFAULT_IMAGES = {
-      vivienda: [
-        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80"
-      ],
-      garaje: [
-        "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=600&q=80"
-      ]
-    };
-
-    function getFallbackImage(item, idx) {
-      if (item.imagen && item.imagen.startsWith("http")) return item.imagen;
-      const list = item.tipo === 'garaje' ? DEFAULT_IMAGES.garaje : DEFAULT_IMAGES.vivienda;
-      return list[idx % list.length];
-    }
-
     function parsePrice(priceStr) {
       if (!priceStr || priceStr.toLowerCase().includes("consultar") || priceStr.toLowerCase().includes("oculto") || priceStr.toLowerCase().includes("especificado")) return 0;
       const num = priceStr.replace(/[^0-9]/g, '');
@@ -570,7 +550,6 @@
         const pa = parsePrice(a.precio);
         const pb = parsePrice(b.precio);
 
-        // Mover los inmuebles sin precio numérico (pa === 0) al final
         if (pa === 0 && pb !== 0) return 1;
         if (pb === 0 && pa !== 0) return -1;
         if (pa === 0 && pb === 0) return 0;
@@ -599,14 +578,17 @@
         const priceNum = parsePrice(item.precio);
         const isHiddenPrice = !priceNum || item.precio.toLowerCase().includes("oculto") || item.precio.toLowerCase().includes("consultar") || item.precio.toLowerCase().includes("especificado");
         const isDeal = item.tipo === 'vivienda' && priceNum > 0 && priceNum <= 250000;
-        const imgUrl = getFallbackImage(item, idx);
+        const realImg = (item.imagen && item.imagen.startsWith("http")) ? item.imagen : null;
         const isFav = favorites.includes(item.enlace);
         const mortgage = calcMortgage(priceNum);
 
         return `
           <div class="property-card">
             <div class="card-thumb-wrap">
-              <img src="${imgUrl}" class="card-thumb" alt="${item.titulo}" loading="lazy" onerror="this.src='${DEFAULT_IMAGES.vivienda[0]}'">
+              ${realImg 
+                ? `<img src="${realImg}" class="card-thumb" alt="${item.titulo}" loading="lazy">`
+                : `<div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#0f172a; color:#64748b; font-size:0.85rem; font-weight:600;">📷 Sin foto directa en el anuncio</div>`
+              }
               <div class="thumb-overlay"></div>
               
               <div class="badge-top-left">
@@ -647,6 +629,7 @@
         `;
       }).join('');
     }
+
 
 
     // Event listeners
