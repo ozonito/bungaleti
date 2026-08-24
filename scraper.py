@@ -33,8 +33,8 @@ EMAIL_TO = os.getenv("EMAIL_TO", "ozonito@gmail.com")
 SEEN_FILE = os.path.join(script_dir, "seen_properties.json")
 
 # Criterios de búsqueda multi-portal:
-# 1. Viviendas en Sonnenland / Maspalomas (máx 300.000€, 35-100m²)
-# 2. Plazas de garaje en San Agustín / Avda. de los Jazmines (Cualquier precio)
+# 1. Viviendas en Sonnenland / Maspalomas (máx 250.000€, 30-110m²)
+# 2. Plazas de garaje EXCLUSIVAMENTE en San Agustín / Avda. de los Jazmines (Cualquier precio)
 
 SEARCH_TARGETS = [
     # Fotocasa
@@ -54,8 +54,8 @@ SEARCH_TARGETS = [
     {"portal": "YaEncontre", "zone": "San Bartolomé (Viviendas)", "url": "https://www.yaencontre.com/venta/viviendas/san-bartolome-de-tirajana", "type": "vivienda"},
 
     # Idealista
-    {"portal": "Idealista", "zone": "Sonnenland (Viviendas)", "url": "https://www.idealista.com/venta-viviendas/san-bartolome-de-tirajana/sonnenland/con-precio-hasta_300000,precio-desde_150000/", "type": "vivienda"},
-    {"portal": "Idealista", "zone": "Maspalomas (Viviendas)", "url": "https://www.idealista.com/venta-viviendas/san-bartolome-de-tirajana/maspalomas-campo-de-golf/con-precio-hasta_300000,precio-desde_150000/", "type": "vivienda"},
+    {"portal": "Idealista", "zone": "Sonnenland (Viviendas)", "url": "https://www.idealista.com/venta-viviendas/san-bartolome-de-tirajana/sonnenland/con-precio-hasta_250000,precio-desde_100000/", "type": "vivienda"},
+    {"portal": "Idealista", "zone": "Maspalomas (Viviendas)", "url": "https://www.idealista.com/venta-viviendas/san-bartolome-de-tirajana/maspalomas-campo-de-golf/con-precio-hasta_250000,precio-desde_100000/", "type": "vivienda"},
     {"portal": "Idealista", "zone": "San Agustín (Garajes)", "url": "https://www.idealista.com/garajes-venta/san-bartolome-de-tirajana/san-agustin/", "type": "garaje"}
 ]
 
@@ -84,24 +84,27 @@ def clean_text(text):
 def check_compatibility(card_text, item_type="vivienda"):
     """
     Filtro de compatibilidad:
-    - Garaje: Exclusivo en San Agustín (Av. los Jazmines y alrededores). Acepta cualquier precio.
-    - Vivienda: Sonnenland / Maspalomas, Máx 300.000 €, superficie 35m² - 100m².
+    - Garaje: EXCLUSIVAMENTE en San Agustín (Av. los Jazmines y alrededores). Acepta cualquier precio.
+    - Vivienda: Sonnenland / Maspalomas, Máx 250.000 €, superficie 30m² - 110m².
     """
     text_lower = card_text.lower()
 
     if item_type == "garaje":
-        # Descartar localidades lejanas devueltas por los portales en búsquedas amplias
-        for exc in ["vecindario", "doctoral", "sardina", "mogan", "arguineguin", "santa lucia"]:
-            if exc in text_lower:
-                return False
-        return True
+        # Descartar cualquier localidad que no sea San Agustín
+        invalid_zones = ["san fernando", "tablero", "vecindario", "doctoral", "sardina", "mogan", "puerto rico", "santa lucia", "el salobre", "arguineguin"]
+        if any(exc in text_lower for exc in invalid_zones):
+            return False
+        
+        # Validar palabras clave relativas a San Agustín
+        valid_san_agustin = any(k in text_lower for k in ["san agustín", "san agustin", "jazmines", "margaritas", "tabaibas", "bahía feliz", "bahia feliz"])
+        return valid_san_agustin
 
-    # Comprobar precio para viviendas
+    # Comprobar precio para viviendas (Máximo 250.000 €)
     price_match = re.search(r'(\d[\d\.]*)\s*€', card_text)
     if price_match:
         try:
             price_val = int(price_match.group(1).replace('.', ''))
-            if price_val > 300000 or price_val < 100000:
+            if price_val > 250000 or price_val < 100000:
                 return False
         except ValueError:
             pass
@@ -117,6 +120,7 @@ def check_compatibility(card_text, item_type="vivienda"):
             pass
 
     return True
+
 
 
 def extract_image(art):
