@@ -1,5 +1,45 @@
 [
   {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Finca rústica en calle Agualatente",
+    "precio": "Precio oculto",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/finca_rustica-zona_interior35299-59178039576_100500/",
+    "imagen": ""
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Apartamento en Avenida De Wind Surfing",
+    "precio": "Precio oculto",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/apartamento-san_agustin_bahia_feliz_castillo_del_romeral35107-55889685953_100500/",
+    "imagen": ""
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Piso en Avenida de Italia",
+    "precio": "200.000 €",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana-66742817625_106100/",
+    "imagen": "https://fotos.imghs.net/mm-wp/1061/3230323630383135/dbaf670b-8d07-4b54-a783-787324820df7.jpg"
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Casa adosada en calle calle Tourop Tjaerebrg, 55",
+    "precio": "Precio oculto",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/casa_adosada-maspalomas_meloneras35100-65097790050_106400/",
+    "imagen": ""
+  },
+  {
     "portal": "Fotocasa",
     "zona": "Sonnenland (Viviendas)",
     "tipo": "vivienda",
@@ -7,7 +47,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.fotocasa.es/es/comprar/vivienda/san-bartolome-de-tirajana/no-amueblado/189479899/d?from=list&multimedia=image&isGalleryOpen=true&isZoomGalleryOpen=true",
-    "imagen": "https://static.fotocasa.es/images/ads/ebf71a67-445d-4853-a87f-a22fa6050142?rule=f_640x480_jpg_70"
+    "imagen": "images/prop_1_7ec142e1be.jpg"
   },
   {
     "portal": "Fotocasa",
@@ -17,7 +57,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.fotocasa.es/es/comprar/obra-nueva/san-bartolome-de-tirajana/20697744",
-    "imagen": "https://static.fotocasa.es/images/ads/c36dfa3a-becd-4aba-8dbd-95b1bb8b5320?rule=f_640x480_jpg_70"
+    "imagen": "images/prop_2_fa195ed1f9.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -27,7 +67,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa-san_bartolome_de_tirajana_playa_del_ingles-65097339185_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630363136/9f392232-abb5-4acb-a519-efebc38dd5da.jpg"
+    "imagen": "images/prop_3_7bbc1121b5.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -37,7 +77,7 @@
     "precio": "265.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/apartamento-san_agustin_bahia_feliz_castillo_del_romeral35100-65915112341_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630373033/cf5797ce-f322-4e73-87c2-fb3c6d999670.jpg"
+    "imagen": "images/prop_4_48adcc33c2.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -47,7 +87,7 @@
     "precio": "255.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/duplex-maspalomas_meloneras35100-65092916337_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630363135/80976785-0a46-4e3a-b0f2-6c2bb124b0a5.jpg"
+    "imagen": "images/prop_5_2c37bc9ebb.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -57,7 +97,7 @@
     "precio": "265.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/apartamento-san_bartolome_de_tirajana_playa_del_ingles-65908981059_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630373032/01ec1ff3-38be-48c9-b4f4-def3158382e5.jpg"
+    "imagen": "images/prop_6_5d49200e3d.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -67,7 +107,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa-zona_interior35108-65021356788_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630363236/de3bb128-3e31-4291-b958-53e3430e2ad6.jpg"
+    "imagen": "images/prop_7_ecd07ff534.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -77,7 +117,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa_adosada-maspalomas_meloneras35100-66712507746_996136/",
-    "imagen": "https://fotos.imghs.net/xl-wp/996136/66712507746.996136/996136_66712507746_d4ac71db-c620-4306-a7a4-59c5b35d0305.jpg"
+    "imagen": "images/prop_8_7f82d15dcb.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -87,7 +127,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa-maspalomas_meloneras35100-65071164552_106100/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1061/3230323630363239/cb75e160-772e-48b2-a2ff-5af482bfdb19.jpg"
+    "imagen": "images/prop_9_c7195d2530.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -97,7 +137,7 @@
     "precio": "285.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/apartamento-san_agustin_bahia_feliz_castillo_del_romeral35100-65852356499_996136/",
-    "imagen": "https://fotos.imghs.net/xl-wp/996136/65852356499.996136/996136_65852356499_28509ea9-d297-45da-ab4d-dbe07d46211e.jpg"
+    "imagen": "images/prop_10_479abb3d7a.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -107,7 +147,7 @@
     "precio": "269.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa_adosada-maspalomas_meloneras35100-66678236407_996136/",
-    "imagen": "https://fotos.imghs.net/xl-wp/996136/66678236407.996136/996136_66678236407_7cd337ee-4a23-41bb-9703-1336a97016ae.jpg"
+    "imagen": "images/prop_11_0502148847.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -117,7 +157,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa_adosada-maspalomas_meloneras35100-66736087404_106100/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1061/3230323630383135/cb2f1e93-73eb-4357-9956-3cead6c72260.jpg"
+    "imagen": "images/prop_12_e37705729a.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -127,7 +167,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana-64214960292_106600/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1066/151/1066_IDJ706-101225151_1_202605210940572983184.jpg"
+    "imagen": "images/prop_13_d9beb47f45.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -137,7 +177,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana-58366552978_106600/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1066/3230323630353037/9b1a0785-d3c6-4dd7-ac20-67685fb16a94.jpg"
+    "imagen": "images/prop_14_7b4fb4650e.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -157,7 +197,7 @@
     "precio": "180.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/apartamento-san_bartolome_de_tirajana_playa_del_ingles-62502938518_511932/",
-    "imagen": "https://fotos.imghs.net/xl-wp/511932/62502938518.511932/511932_62502938518_5ab27de8-7508-4b20-a275-f048a03f1bd8.jpg"
+    "imagen": "images/prop_16_31a46781d0.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -167,7 +207,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/apartamento-san_bartolome_de_tirajana_playa_del_ingles-64255581285_524161/",
-    "imagen": "https://fotos.imghs.net/xl-wp/524161/64255581285.524161/524161_64255581285_b9154263-aef4-46a8-9566-1c4f9e385c84.jpg"
+    "imagen": "images/prop_17_d66d0835b1.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -177,7 +217,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/chalet-zona_interior35299-64191646381_515222/",
-    "imagen": "https://fotos.imghs.net/xl-wp/515222/64191646381.515222/515222_64191646381_cd3dc257-ea49-4035-b27e-dd81a1c5e31e.jpg"
+    "imagen": "images/prop_18_4174154221.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -187,7 +227,7 @@
     "precio": "210.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/duplex-maspalomas_meloneras35100-61736326320_524161/",
-    "imagen": "https://fotos.imghs.net/xl-wp/524161/61736326320.524161/524161_61736326320_4bdf5d05-be2b-4398-b24f-1bb2190ae3d5.jpg"
+    "imagen": "images/prop_19_bea4aba8c4.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -197,7 +237,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa-san_bartolome_de_tirajana_el_salobre35106-61766064132_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630373135/abb90294-c446-4864-ae8c-9ddc9d500071.jpg"
+    "imagen": "images/prop_20_e7667444f1.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -207,7 +247,7 @@
     "precio": "299.900 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana-61725031101_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/111/1005_110536111_3_202602042231500946264.jpg"
+    "imagen": "images/prop_21_7545558ea3.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -217,7 +257,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa_adosada-san_agustin_bahia_feliz_castillo_del_romeral35107-65913670480_106100/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1061/3230323630373236/bd2a0bab-d12f-418a-ac56-b37ed6d3f797.jpg"
+    "imagen": "images/prop_22_fa7ac1d100.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -227,7 +267,7 @@
     "precio": "239.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/piso-san_agustin_bahia_feliz_castillo_del_romeral35100-66717435505_106100/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1061/3230323630383233/a78a71eb-e90e-40d3-a64f-05bf98d51838.jpg"
+    "imagen": "images/prop_23_b5ff6a471e.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -237,7 +277,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa_adosada-san_bartolome_de_tirajana_playa_del_ingles-55885662927_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/297/1005_108822297_1_2025072122072007028.jpg"
+    "imagen": "images/prop_24_dbe7bbb954.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -247,7 +287,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa-zona_interior35290-52549087870_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/860/1005_241357071860_1_2025110413114873161.jpg"
+    "imagen": "images/prop_25_4004120e5e.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -257,7 +297,7 @@
     "precio": "225.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana_playa_del_ingles-65840142527_100500/",
-    "imagen": ""
+    "imagen": "images/prop_26_c3a8908ef8.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -267,7 +307,7 @@
     "precio": "225.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana_playa_del_ingles-53422241713_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/964/1005_108003964_1_2025042422045199840.jpg"
+    "imagen": "images/prop_27_889d2f4cd3.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -277,7 +317,7 @@
     "precio": "160.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/estudio-san_bartolome_de_tirajana_playa_del_ingles-63362303976_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/209/1005_111179209_1_202605122233429450118.jpg"
+    "imagen": "images/prop_28_abc32ca7c4.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -287,7 +327,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/chalet-san_bartolome_de_tirajana_el_salobre35106-64166795590_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630383230/53580a5e-a848-4330-b44a-1d4178c37f35.jpg"
+    "imagen": "images/prop_29_2aeae5bf74.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -297,7 +337,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/piso-el_tablero_de_maspalomas35109-62500796479_106600/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1066/3230323630363235/23137fc1-3dfd-4933-ad38-327599ad1858.jpg"
+    "imagen": "images/prop_30_61181b5062.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -307,7 +347,7 @@
     "precio": "215.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/piso-el_tablero_de_maspalomas35109-65057975635_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630363234/cf965a3d-1b42-4dc0-8ecf-b14bae73ffe2.jpg"
+    "imagen": "images/prop_31_6b41aebea3.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -317,7 +357,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/finca_rustica-zona_interior35128-60842628348_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/400/1005_2635631711400_1_2026010810015832199.jpg"
+    "imagen": "images/prop_32_94fd05bd79.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -327,7 +367,7 @@
     "precio": "Precio oculto",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/chalet-san_agustin_bahia_feliz_castillo_del_romeral35100-62518584987_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630373137/a91cbd7d-fb50-4d44-89c9-c46fa4a66e76.jpg"
+    "imagen": "images/prop_33_1381434ea5.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -337,7 +377,7 @@
     "precio": "275.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa-san_agustin_bahia_feliz_castillo_del_romeral35107-65036832406_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630363236/32c359f2-1556-4e67-9801-da4b4f630a68.jpg"
+    "imagen": "images/prop_34_a16e629d00.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -347,7 +387,7 @@
     "precio": "215.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana_playa_del_ingles-66693427540_106100/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1061/3230323630383135/b9ce4f66-cacb-482e-9826-a3ce2f6cc7ab.jpg"
+    "imagen": "images/prop_35_cbcce7b328.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -357,7 +397,7 @@
     "precio": "30.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/garaje-san_bartolome_de_tirajana_san_fernando-65014860034_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/148/1005_2937779011148_1_202606091925512305475.jpg"
+    "imagen": "images/prop_36_3c30950933.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -367,7 +407,7 @@
     "precio": "19.900 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/trastero-sonnenland35100-65842680058_108900/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1089/594/1089_XA777-3594_1_2026072720034931250.jpg"
+    "imagen": "images/prop_37_7134f7e6dc.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -377,7 +417,7 @@
     "precio": "28.900 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/trastero-san_bartolome_de_tirajana_san_fernando35100-61736885136_100200/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1002/860/1002_649860_1_202602272037587833867.jpeg"
+    "imagen": "images/prop_38_994f38f121.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -387,7 +427,7 @@
     "precio": "28.900 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/trastero-san_bartolome_de_tirajana_san_fernando35100-61694977749_100200/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1002/859/1002_649859_1_202602272037585361895.jpeg"
+    "imagen": "images/prop_39_f29e0017ff.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -397,7 +437,7 @@
     "precio": "6.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/trastero-mogan_arguineguin-65875571257_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630363235/4c9449e1-01af-4fa0-b85b-bc2601141a40.jpg"
+    "imagen": "images/prop_40_1d734abccb.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -407,7 +447,7 @@
     "precio": "6.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/trastero-mogan_arguineguin-65843385566_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630363235/4c9449e1-01af-4fa0-b85b-bc2601141a40.jpg"
+    "imagen": "images/prop_41_5e10dc4ca2.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -417,7 +457,7 @@
     "precio": "6.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/trastero-mogan_arguineguin-65918717329_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630363235/601cb86c-ed4e-4dd6-b04a-61f6941d06e3.jpg"
+    "imagen": "images/prop_42_dc9e12c3e7.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -427,7 +467,7 @@
     "precio": "6.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/trastero-mogan_arguineguin-65930741122_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630363235/4c9449e1-01af-4fa0-b85b-bc2601141a40.jpg"
+    "imagen": "images/prop_43_24f8ef18e9.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -437,7 +477,7 @@
     "precio": "6.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/trastero-mogan_arguineguin-65871390475_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630363235/4c9449e1-01af-4fa0-b85b-bc2601141a40.jpg"
+    "imagen": "images/prop_44_07a4e922c7.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -447,7 +487,7 @@
     "precio": "6.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/trastero-mogan_arguineguin-65879476727_100500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1005/3230323630363235/4c9449e1-01af-4fa0-b85b-bc2601141a40.jpg"
+    "imagen": "images/prop_45_0e4af1d35f.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -457,7 +497,7 @@
     "precio": "27.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/garaje-mogan_puerto_rico-65894309652_106100/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1061/3230323630373039/a8dfe5dc-943a-4957-b365-8bd79d0e84c8.jpg"
+    "imagen": "images/prop_46_c1b092368d.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -467,6 +507,6 @@
     "precio": "30.000 €",
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/garaje-mogan_puerto_rico-43396810206_108500/",
-    "imagen": "https://fotos.imghs.net/xl-wp/1085/814/1085_AG35-1188814_1_2024051316052782198.jpg"
+    "imagen": "images/prop_47_2a7214ed12.jpg"
   }
 ]
