@@ -73,36 +73,6 @@
     "portal": "Pisos.com",
     "zona": "Sonnenland / Maspalomas (Viviendas)",
     "tipo": "vivienda",
-    "titulo": "Apartamento en San Augustin",
-    "precio": "265.000 €",
-    "detalles": "",
-    "enlace": "https://www.pisos.com/comprar/apartamento-san_agustin_bahia_feliz_castillo_del_romeral35100-65915112341_100500/",
-    "imagen": "images/prop_8_48adcc33c2.jpg"
-  },
-  {
-    "portal": "Pisos.com",
-    "zona": "Sonnenland / Maspalomas (Viviendas)",
-    "tipo": "vivienda",
-    "titulo": "Dúplex en Avenida Touroperador Air Marin",
-    "precio": "255.000 €",
-    "detalles": "",
-    "enlace": "https://www.pisos.com/comprar/duplex-maspalomas_meloneras35100-65092916337_100500/",
-    "imagen": "images/prop_9_2c37bc9ebb.jpg"
-  },
-  {
-    "portal": "Pisos.com",
-    "zona": "Sonnenland / Maspalomas (Viviendas)",
-    "tipo": "vivienda",
-    "titulo": "Apartamento en Avenida de Tirajana",
-    "precio": "265.000 €",
-    "detalles": "",
-    "enlace": "https://www.pisos.com/comprar/apartamento-san_bartolome_de_tirajana_playa_del_ingles-65908981059_100500/",
-    "imagen": "images/prop_10_5d49200e3d.jpg"
-  },
-  {
-    "portal": "Pisos.com",
-    "zona": "Sonnenland / Maspalomas (Viviendas)",
-    "tipo": "vivienda",
     "titulo": "Casa en calle de la Montañeta, 16",
     "precio": "Precio oculto",
     "detalles": "",
@@ -128,26 +98,6 @@
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa-maspalomas_meloneras35100-65071164552_106100/",
     "imagen": "images/prop_13_c7195d2530.jpg"
-  },
-  {
-    "portal": "Pisos.com",
-    "zona": "Sonnenland / Maspalomas (Viviendas)",
-    "tipo": "vivienda",
-    "titulo": "Apartamento en calle San Agustín Apto Con Preciosas Vistas Al Mar",
-    "precio": "285.000 €",
-    "detalles": "",
-    "enlace": "https://www.pisos.com/comprar/apartamento-san_agustin_bahia_feliz_castillo_del_romeral35100-65852356499_996136/",
-    "imagen": "images/prop_14_479abb3d7a.jpg"
-  },
-  {
-    "portal": "Pisos.com",
-    "zona": "Sonnenland / Maspalomas (Viviendas)",
-    "tipo": "vivienda",
-    "titulo": "Casa adosada en calle Precioso Bungalow Campo Internacional Maspalomas",
-    "precio": "269.000 €",
-    "detalles": "",
-    "enlace": "https://www.pisos.com/comprar/casa_adosada-maspalomas_meloneras35100-66678236407_996136/",
-    "imagen": "images/prop_15_0502148847.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -238,16 +188,6 @@
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/casa-san_bartolome_de_tirajana_el_salobre35106-61766064132_100500/",
     "imagen": "images/prop_24_e7667444f1.jpg"
-  },
-  {
-    "portal": "Pisos.com",
-    "zona": "Sonnenland / Maspalomas (Viviendas)",
-    "tipo": "vivienda",
-    "titulo": "Piso en Avenida de Gran Canaria, 44",
-    "precio": "299.900 €",
-    "detalles": "",
-    "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana-61725031101_100500/",
-    "imagen": "images/prop_25_7545558ea3.jpg"
   },
   {
     "portal": "Pisos.com",
@@ -368,16 +308,6 @@
     "detalles": "",
     "enlace": "https://www.pisos.com/comprar/chalet-san_agustin_bahia_feliz_castillo_del_romeral35100-62518584987_100500/",
     "imagen": "images/prop_37_1381434ea5.jpg"
-  },
-  {
-    "portal": "Pisos.com",
-    "zona": "Sonnenland / Maspalomas (Viviendas)",
-    "tipo": "vivienda",
-    "titulo": "Casa en Avenida De Wind Surfing",
-    "precio": "275.000 €",
-    "detalles": "",
-    "enlace": "https://www.pisos.com/comprar/casa-san_agustin_bahia_feliz_castillo_del_romeral35107-65036832406_100500/",
-    "imagen": "images/prop_38_a16e629d00.jpg"
   },
   {
     "portal": "Pisos.com",

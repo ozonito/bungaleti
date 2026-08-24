@@ -578,7 +578,7 @@
         const priceNum = parsePrice(item.precio);
         const isHiddenPrice = !priceNum || item.precio.toLowerCase().includes("oculto") || item.precio.toLowerCase().includes("consultar") || item.precio.toLowerCase().includes("especificado");
         const isDeal = item.tipo === 'vivienda' && priceNum > 0 && priceNum <= 250000;
-        const realImg = (item.imagen && item.imagen.startsWith("http")) ? item.imagen : null;
+        const realImg = (item.imagen && (item.imagen.startsWith("http") || item.imagen.startsWith("images/") || item.imagen.startsWith("./images/"))) ? item.imagen : null;
         const isFav = favorites.includes(item.enlace);
         const mortgage = calcMortgage(priceNum);
 
