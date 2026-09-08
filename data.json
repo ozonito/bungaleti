@@ -1,5 +1,115 @@
 [
   {
+    "portal": "Fotocasa",
+    "zona": "Sonnenland (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Piso en Calle RIO JANEIRO, 4, El Tablero",
+    "precio": "Precio oculto",
+    "detalles": "",
+    "enlace": "https://www.fotocasa.es/es/comprar/vivienda/san-bartolome-de-tirajana/aire-acondicionado-calefaccion-parking-ascensor-amueblado/190447658/d?from=list&multimedia=image&isGalleryOpen=true&isZoomGalleryOpen=true",
+    "imagen": "https://static.fotocasa.es/images/ads/ddc8b7c4-3369-4be5-a7b7-8cc48473a8ea?rule=original"
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Piso en Avenida de Italia",
+    "precio": "Precio oculto",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana_playa_del_ingles-66726143135_100500/",
+    "imagen": ""
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Piso en calle Marruecos",
+    "precio": "185.000 €",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana_playa_del_ingles-66695312754_100500/",
+    "imagen": "https://fotos.imghs.net/mm-wp/1005/3230323630383130/1de414fa-3b1a-4410-a4f4-05d18230f61e.jpg"
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Casa en Avenida Touroperador Kuoni",
+    "precio": "Precio oculto",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/casa-maspalomas_meloneras35100-44214940721_100500/",
+    "imagen": ""
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Casa en calle Avenida Touroperador Thomson Hol. Nn",
+    "precio": "Precio oculto",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/casa-maspalomas_meloneras35100-67524165095_106100/",
+    "imagen": ""
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Casa en calle Isla De Creta",
+    "precio": "Precio oculto",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/casa-san_bartolome_de_tirajana_el_salobre-54168588460_100500/",
+    "imagen": ""
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Piso en Avenida de Italia",
+    "precio": "Precio oculto",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana_playa_del_ingles-66698720461_100500/",
+    "imagen": ""
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Piso en San Fernando",
+    "precio": "230.000 €",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana_san_fernando-62503062927_108500/",
+    "imagen": "https://fotos.imghs.net/mm-wp/1085/724/1085_AG276-1715724_1_202603200736108319724.jpg"
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Estudio en calle Los Jazmines",
+    "precio": "250.000 €",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/estudio-san_agustin_bahia_feliz_castillo_del_romeral35100-65902534271_100500/",
+    "imagen": "https://fotos.imghs.net/mm-wp/1005/3230323630363232/3096f9a9-7d6e-473d-89c7-0ffa7337a6f3.jpg"
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Chalet en Sonnenland",
+    "precio": "Precio oculto",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/chalet-sonnenland35100-67591721030_106100/",
+    "imagen": ""
+  },
+  {
+    "portal": "Pisos.com",
+    "zona": "Sonnenland / Maspalomas (Viviendas)",
+    "tipo": "vivienda",
+    "titulo": "Piso en San Fernando",
+    "precio": "Precio oculto",
+    "detalles": "",
+    "enlace": "https://www.pisos.com/comprar/piso-san_bartolome_de_tirajana_san_fernando35100-60004992375_100200/",
+    "imagen": ""
+  },
+  {
     "portal": "Pisos.com",
     "zona": "Sonnenland / Maspalomas (Viviendas)",
     "tipo": "vivienda",
