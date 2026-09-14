@@ -33,30 +33,20 @@ EMAIL_TO = os.getenv("EMAIL_TO", "ozonito@gmail.com")
 SEEN_FILE = os.path.join(script_dir, "seen_properties.json")
 
 # Criterios de búsqueda multi-portal:
-# 1. Viviendas en Sonnenland / Maspalomas (máx 250.000€, 30-110m²)
-# 2. Plazas de garaje EXCLUSIVAMENTE en San Agustín / Avda. de los Jazmines (Cualquier precio)
+# BÚSQUEDA EXCLUSIVA DE PLAZAS DE GARAJE EN SAN AGUSTÍN / AVENIDA DE LOS JAZMINES Y ALREDEDORES
 
 SEARCH_TARGETS = [
     # Fotocasa
-    {"portal": "Fotocasa", "zone": "Sonnenland (Viviendas)", "url": "https://www.fotocasa.es/es/comprar/viviendas/san-bartolome-de-tirajana/sonnenland/l", "type": "vivienda"},
-    {"portal": "Fotocasa", "zone": "Maspalomas (Viviendas)", "url": "https://www.fotocasa.es/es/comprar/viviendas/san-bartolome-de-tirajana/maspalomas-campo-de-golf/l", "type": "vivienda"},
-    {"portal": "Fotocasa", "zone": "San Agustín (Garajes)", "url": "https://www.fotocasa.es/es/comprar/garajes/san-bartolome-de-tirajana/san-agustin/l", "type": "garaje"},
+    {"portal": "Fotocasa", "zone": "San Agustín (Av. Jazmines)", "url": "https://www.fotocasa.es/es/comprar/garajes/san-bartolome-de-tirajana/san-agustin/l", "type": "garaje"},
     
     # Pisos.com
-    {"portal": "Pisos.com", "zone": "Sonnenland / Maspalomas (Viviendas)", "url": "https://www.pisos.com/venta/casas_pisos-san_bartolome_de_tirajana/", "type": "vivienda"},
-    {"portal": "Pisos.com", "zone": "San Agustín (Garajes)", "url": "https://www.pisos.com/venta/garajes-san_bartolome_de_tirajana/", "type": "garaje"},
+    {"portal": "Pisos.com", "zone": "San Agustín (Av. Jazmines)", "url": "https://www.pisos.com/venta/garajes-san_bartolome_de_tirajana/", "type": "garaje"},
 
     # Habitaclia
-    {"portal": "Habitaclia", "zone": "San Bartolomé (Viviendas)", "url": "https://www.habitaclia.com/comprar-vivienda-en-san_bartolome_de_tirajana/buscador.htm", "type": "vivienda"},
-    {"portal": "Habitaclia", "zone": "San Agustín (Garajes)", "url": "https://www.habitaclia.com/comprar-garaje-en-san_bartolome_de_tirajana/buscador.htm", "type": "garaje"},
-
-    # YaEncontre
-    {"portal": "YaEncontre", "zone": "San Bartolomé (Viviendas)", "url": "https://www.yaencontre.com/venta/viviendas/san-bartolome-de-tirajana", "type": "vivienda"},
+    {"portal": "Habitaclia", "zone": "San Agustín (Av. Jazmines)", "url": "https://www.habitaclia.com/comprar-garaje-en-san_bartolome_de_tirajana/buscador.htm", "type": "garaje"},
 
     # Idealista
-    {"portal": "Idealista", "zone": "Sonnenland (Viviendas)", "url": "https://www.idealista.com/venta-viviendas/san-bartolome-de-tirajana/sonnenland/con-precio-hasta_250000,precio-desde_100000/", "type": "vivienda"},
-    {"portal": "Idealista", "zone": "Maspalomas (Viviendas)", "url": "https://www.idealista.com/venta-viviendas/san-bartolome-de-tirajana/maspalomas-campo-de-golf/con-precio-hasta_250000,precio-desde_100000/", "type": "vivienda"},
-    {"portal": "Idealista", "zone": "San Agustín (Garajes)", "url": "https://www.idealista.com/garajes-venta/san-bartolome-de-tirajana/san-agustin/", "type": "garaje"}
+    {"portal": "Idealista", "zone": "San Agustín (Av. Jazmines)", "url": "https://www.idealista.com/garajes-venta/san-bartolome-de-tirajana/san-agustin/", "type": "garaje"}
 ]
 
 def load_seen_urls():
@@ -81,45 +71,27 @@ def clean_text(text):
     text = re.sub(r'[\u200b\u200c\u200d\ufeff]', '', text)
     return re.sub(r'\s+', ' ', text).strip()
 
-def check_compatibility(card_text, item_type="vivienda"):
+def check_compatibility(card_text, item_type="garaje"):
     """
     Filtro de compatibilidad:
-    - Garaje: EXCLUSIVAMENTE en San Agustín (Av. los Jazmines y alrededores). Acepta cualquier precio.
-    - Vivienda: Sonnenland / Maspalomas, Máx 250.000 €, superficie 30m² - 110m².
+    - EXCLUSIVO para plazas de garaje en San Agustín (Av. los Jazmines, Margaritas, Tabaibas, etc.).
+    - Se elimina cualquier tipo de bungalow, casa o vivienda.
     """
     text_lower = card_text.lower()
 
-    if item_type == "garaje":
-        # Descartar cualquier localidad que no sea San Agustín
-        invalid_zones = ["san fernando", "tablero", "vecindario", "doctoral", "sardina", "mogan", "puerto rico", "santa lucia", "el salobre", "arguineguin"]
-        if any(exc in text_lower for exc in invalid_zones):
-            return False
-        
-        # Validar palabras clave relativas a San Agustín
-        valid_san_agustin = any(k in text_lower for k in ["san agustín", "san agustin", "jazmines", "margaritas", "tabaibas", "bahía feliz", "bahia feliz"])
-        return valid_san_agustin
+    # Si no es un garaje o aparcamiento, descartar de inmediato
+    if item_type != "garaje" and not any(kw in text_lower for kw in ["garaje", "aparcar", "aparcamiento", "plaza", "cochera", "parking"]):
+        return False
 
-    # Comprobar precio para viviendas (Máximo 250.000 €)
-    price_match = re.search(r'(\d[\d\.]*)\s*€', card_text)
-    if price_match:
-        try:
-            price_val = int(price_match.group(1).replace('.', ''))
-            if price_val > 250000 or price_val < 100000:
-                return False
-        except ValueError:
-            pass
+    # Descartar localidades lejanas o no pertenecientes a San Agustín
+    invalid_zones = ["san fernando", "tablero", "vecindario", "doctoral", "sardina", "mogan", "puerto rico", "santa lucia", "el salobre", "arguineguin", "playa del ingles", "sonnenland"]
+    if any(exc in text_lower for exc in invalid_zones):
+        return False
 
-    # Comprobar tamaño para viviendas si se indica
-    size_match = re.search(r'(\d+)\s*(?:m²|m2)', card_text, re.I)
-    if size_match:
-        try:
-            size_val = int(size_match.group(1))
-            if size_val < 30 or size_val > 110:
-                return False
-        except ValueError:
-            pass
+    # Validar palabras clave relativas a San Agustín / Av. Jazmines
+    valid_san_agustin = any(k in text_lower for k in ["san agustín", "san agustin", "jazmines", "azmines", "margaritas", "tabaibas", "bahía feliz", "bahia feliz"])
+    return valid_san_agustin
 
-    return True
 
 
 

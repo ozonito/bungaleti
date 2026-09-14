@@ -398,8 +398,8 @@
   <header>
     <div class="header-container">
       <div class="logo-box">
-        <h1>📊 Bungaleti Decision Suite</h1>
-        <div class="logo-subtitle">Panel de Análisis y Oportunidades Inmobiliarias • Gran Canaria</div>
+        <h1>🚗 Bungaleti — Garajes San Agustín</h1>
+        <div class="logo-subtitle">Buscador Exclusivo de Plazas de Aparcamiento en Av. de los Jazmines y Alrededores • San Agustín</div>
       </div>
       <div>
         <button class="btn-tab active" id="favFilterBtn">❤️ Favoritos (<span id="favCount">0</span>)</button>
@@ -410,34 +410,34 @@
   <!-- KPI ANALYTICS DASHBOARD -->
   <section class="kpi-section">
     <div class="kpi-card">
-      <div class="kpi-icon kpi-blue">🏡</div>
-      <div>
-        <div class="kpi-val" id="kpiTotal">-</div>
-        <div class="kpi-label">Viviendas Disponibles</div>
-      </div>
-    </div>
-
-    <div class="kpi-card">
-      <div class="kpi-icon kpi-green">💎</div>
-      <div>
-        <div class="kpi-val" id="kpiDeals">-</div>
-        <div class="kpi-label">Chollos (≤ 250k €)</div>
-      </div>
-    </div>
-
-    <div class="kpi-card">
-      <div class="kpi-icon kpi-purple">📈</div>
-      <div>
-        <div class="kpi-val" id="kpiAvgPrice">- €</div>
-        <div class="kpi-label">Precio Medio Viviendas</div>
-      </div>
-    </div>
-
-    <div class="kpi-card">
       <div class="kpi-icon kpi-amber">🚗</div>
       <div>
         <div class="kpi-val" id="kpiGarages">-</div>
-        <div class="kpi-label">Garajes en San Agustín</div>
+        <div class="kpi-label">Plazas de Garaje Disponibles</div>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-icon kpi-blue">📍</div>
+      <div>
+        <div class="kpi-val" id="kpiJazmines">-</div>
+        <div class="kpi-label">Zona Av. de los Jazmines</div>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-icon kpi-green">💰</div>
+      <div>
+        <div class="kpi-val" id="kpiAvgPrice">- €</div>
+        <div class="kpi-label">Precio Medio Garaje</div>
+      </div>
+    </div>
+
+    <div class="kpi-card">
+      <div class="kpi-icon kpi-purple">⭐</div>
+      <div>
+        <div class="kpi-val" id="kpiTotal">-</div>
+        <div class="kpi-label">Total Oportunidades</div>
       </div>
     </div>
   </section>
@@ -446,19 +446,17 @@
   <main>
     <div class="controls-bar">
       <div class="filter-group">
-        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar por zona, calle o palabra clave..." style="min-width: 280px;">
+        <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar por calle (Jazmines, Margaritas, Tabaibas...)..." style="min-width: 300px;">
         <select id="sortSelect" class="select-input">
           <option value="recent">⏱️ Más recientes primero</option>
           <option value="price-asc">💵 Precio: Menor a Mayor</option>
           <option value="price-desc">💰 Precio: Mayor a Menor</option>
-          <option value="deal-score">⭐ Mejores Oportunidades</option>
         </select>
       </div>
 
       <div class="filter-group">
-        <button class="btn-tab active" data-type="all">Todos</button>
-        <button class="btn-tab" data-type="vivienda">🏡 Viviendas (≤250k €)</button>
-        <button class="btn-tab" data-type="garaje">🚗 Garajes (San Agustín)</button>
+        <button class="btn-tab active" data-type="all">🚗 Todas las Plazas</button>
+        <button class="btn-tab" data-type="jazmines">📍 Av. de los Jazmines</button>
       </div>
     </div>
 
@@ -609,21 +607,20 @@
     }
 
     function updateKPIs() {
-      const viviendas = allData.filter(d => d.tipo === 'vivienda');
-      const garajes = allData.filter(d => d.tipo === 'garaje');
-      const deals = viviendas.filter(v => {
-        const p = parsePrice(v.precio);
-        return p > 0 && p <= 250000;
+      const garajes = allData.filter(d => d.tipo === 'garaje' || !d.tipo);
+      const jazmines = garajes.filter(g => {
+        const text = (g.titulo + " " + g.zona).toLowerCase();
+        return text.includes("jazmines") || text.includes("azmines") || text.includes("margaritas");
       });
 
-      const prices = viviendas.map(v => parsePrice(v.precio)).filter(p => p > 0);
+      const prices = garajes.map(g => parsePrice(g.precio)).filter(p => p > 0);
       const avgPrice = prices.length ? Math.round(prices.reduce((a, b) => a + b, 0) / prices.length) : 0;
 
-      document.getElementById('kpiTotal').innerText = viviendas.length;
-      document.getElementById('kpiDeals').innerText = deals.length;
-      document.getElementById('kpiAvgPrice').innerText = avgPrice ? avgPrice.toLocaleString('es-ES') + " €" : "N/A";
-      document.getElementById('kpiGarages').innerText = garajes.length;
-      document.getElementById('favCount').innerText = favorites.length;
+      if (document.getElementById('kpiGarages')) document.getElementById('kpiGarages').innerText = garajes.length;
+      if (document.getElementById('kpiJazmines')) document.getElementById('kpiJazmines').innerText = jazmines.length;
+      if (document.getElementById('kpiAvgPrice')) document.getElementById('kpiAvgPrice').innerText = avgPrice ? avgPrice.toLocaleString('es-ES') + " €" : "N/A";
+      if (document.getElementById('kpiTotal')) document.getElementById('kpiTotal').innerText = garajes.length;
+      if (document.getElementById('favCount')) document.getElementById('favCount').innerText = favorites.length;
     }
 
     function toggleFav(link) {
@@ -643,8 +640,11 @@
       const sortVal = document.getElementById('sortSelect').value;
 
       let filtered = allData.filter((item, idx) => {
-        const matchesType = (currentTypeFilter === 'all') || (item.tipo === currentTypeFilter);
         const text = `${item.titulo} ${item.zona} ${item.portal} ${item.precio} ${item.detalles || ''}`.toLowerCase();
+        let matchesType = true;
+        if (currentTypeFilter === 'jazmines') {
+          matchesType = text.includes("jazmines") || text.includes("azmines") || text.includes("margaritas");
+        }
         const matchesSearch = text.includes(searchVal);
         const matchesFav = onlyFavs ? favorites.includes(item.enlace) : true;
         return matchesType && matchesSearch && matchesFav;
